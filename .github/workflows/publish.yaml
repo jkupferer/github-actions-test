@@ -27,3 +27,7 @@ jobs:
     - name: Build and publish image
       if: "!contains(steps.get_version.outputs.VERSION, '-')"
       run: echo hello
+
+    - name: Build and publish image
+      if: "contains(steps.get_version.outputs.VERSION, '-')"
+      run: echo goodbye
