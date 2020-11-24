@@ -25,6 +25,5 @@ jobs:
         ( IFS=$','; echo "::set-output name=IMAGE_TAGS::${TAGS[*]}" )
 
     - name: Build and publish image
-      uses: docker/build-push-action@v1
       if: "!contains(steps.get_version.outputs.VERSION, '-')"
       run: echo hello
